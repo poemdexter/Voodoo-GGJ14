@@ -14,5 +14,7 @@ public class PlayerCollision : MonoBehaviour
     void Respawn()
     {
         Debug.Log("Respawn");
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().RespawnPlayer();
+        Destroy(this.gameObject);
     }
 }
