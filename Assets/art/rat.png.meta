@@ -1,0 +1,121 @@
+fileFormatVersion: 2
+guid: 623de88f3a3524d4ea6aba2e69cd0b21
+TextureImporter:
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: iPhone
+    maxTextureSize: 1024
+    textureFormat: -2
+    compressionQuality: 50
+  spriteSheet:
+    sprites:
+    - name: rat_0
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 227
+        width: 143
+        height: 109
+      alignment: 9
+      pivot: {x: .645040154, y: .0599727817}
+    - name: rat_1
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 298
+        width: 62
+        height: 28
+      alignment: 1
+      pivot: {x: 0, y: 1}
+    - name: rat_2
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 163
+        width: 64
+        height: 40
+      alignment: 9
+      pivot: {x: .824074149, y: .710647941}
+    - name: rat_3
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 163
+        width: 64
+        height: 40
+      alignment: 9
+      pivot: {x: .82407403, y: .743055344}
+    - name: rat_4
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 136
+        width: 117
+        height: 132
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: rat_5
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 31
+        width: 87
+        height: 60
+      alignment: 9
+      pivot: {x: .730949402, y: .737654388}
+    - name: rat_6
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 36
+        width: 87
+        height: 60
+      alignment: 9
+      pivot: {x: .730948985, y: .694444537}
+    - name: rat_7
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 36
+        width: 70
+        height: 80
+      alignment: 9
+      pivot: {x: .0925925151, y: .151620477}
+  spritePackingTag: 
+  userData: 
