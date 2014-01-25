@@ -1,4 +1,4 @@
-Voodoo Project for Global Game Jam 2014
+'Voodoo' - Global Game Jam 2014
 ============
 
 Assets so far: http://puu.sh/6xBV8.jpg
