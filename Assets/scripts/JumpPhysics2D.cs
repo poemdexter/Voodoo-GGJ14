@@ -212,19 +212,21 @@ public class JumpPhysics2D : MonoBehaviour
             hitRightSide = Physics2D.Raycast((Vector2)transform.position + collisionRayRightOffset, direction, this.renderer.bounds.extents.y + directionDepth, LayerMask.NameToLayer(playerLayerName));
         }
         
-        // hit on left side
+        // check hit on left side
         if (hitLeftSide.collider != null) {
             // we hit explicit tagged object
             if (HitTagOrLayerObject(hitLeftSide.collider.gameObject)) {
                 // set our position to hit point so we don't stutter in place
-                transform.position = new Vector2(transform.position.x, hitLeftSide.point.y + (-directionSign * this.renderer.bounds.extents.y));
+                transform.position = new Vector2(transform.position.x, hitLeftSide.point.y + (-directionSign * (this.renderer.bounds.extents.y + directionDepth)));
                 return true; 
             }
-        } else if (hitRightSide.collider != null) {
+        }
+        // check hit on right side
+        if (hitRightSide.collider != null) {
             // we hit explicit tagged object
             if (HitTagOrLayerObject(hitRightSide.collider.gameObject)) {
                 // set our position to hit point so we don't stutter in place
-                transform.position = new Vector2(transform.position.x, hitRightSide.point.y + (-directionSign * this.renderer.bounds.extents.y));
+                transform.position = new Vector2(transform.position.x, hitRightSide.point.y + (-directionSign * (this.renderer.bounds.extents.y + directionDepth)));
                 return true;
             }
         }

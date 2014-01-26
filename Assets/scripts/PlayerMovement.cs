@@ -4,8 +4,10 @@ using System.Collections;
 public class PlayerMovement : MonoBehaviour
 {
     public float speed;
-    float scale;
     Animator anim;
+    float scale;
+    public Vector2 wallRayTopOffset = Vector2.zero;
+    public Vector2 wallRayBottomOffset = Vector2.zero;
 
     void Start()
     {
@@ -16,13 +18,22 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         float movement = Input.GetAxis("Horizontal");
-        transform.Translate(new Vector2(movement, 0) * speed * Time.deltaTime);
-
         if (movement != 0) {
+            if (movement < 0) {
+                transform.Translate(new Vector2(movement, 0) * speed * Time.deltaTime);
+                anim.SetBool("Moving", true);
+            } else if (movement > 0) {
+                transform.Translate(new Vector2(movement, 0) * speed * Time.deltaTime);
+                anim.SetBool("Moving", true);
+            } else {
+                anim.SetBool("Moving", false);
+            }
             transform.localScale = (movement < 0) ? new Vector2(scale, scale) : new Vector2(-scale, scale);
-            anim.SetBool("Moving", true);
         } else {
             anim.SetBool("Moving", false);
         }
+        
+        // ensure we aren't rotating
+        transform.rotation = Quaternion.identity;
     }
 }
