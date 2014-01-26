@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\scripts\CameraFollowPlayer.cs" />
      <Compile Include="Assets\scripts\GameController.cs" />
      <Compile Include="Assets\scripts\JumpPhysics2D.cs" />
      <Compile Include="Assets\scripts\PlayerCollision.cs" />
