@@ -8,8 +8,9 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
-        Physics2D.IgnoreLayerCollision(2, 2);
-        Physics2D.IgnoreLayerCollision(11, 11);
+        Physics2D.IgnoreLayerCollision(2, 2);   // ignore, ignore
+        Physics2D.IgnoreLayerCollision(11, 11); // rat, rat
+        Physics2D.IgnoreLayerCollision(11, 12); // rat, tail
     }
     
     public void RespawnPlayer()
@@ -18,11 +19,25 @@ public class GameController : MonoBehaviour
         Camera.main.GetComponent<CameraFollowPlayer>().HandlePlayerRespawn(newPlayer.transform);
     }
     
-    public void DestroyRats()
+    public void PrepDestroyRats(int ratID)
     {
-        GameObject[] rats = GameObject.FindGameObjectsWithTag("Rat");
+        GameObject[] rats = GameObject.FindGameObjectsWithTag("Rat" + ratID);
         foreach (GameObject rat in rats) {
-            rat.GetComponent<RatExplode>().Explode();
+            if (rat.name != ("Rat" + ratID + "(Clone)")) {
+                rat.GetComponent<Animator>().enabled = false;
+                rat.GetComponent<RatMovement>().enabled = false;
+            }
+        }
+    }
+    
+    public void DestroyRats(int ratID)
+    {
+        GameObject[] rats = GameObject.FindGameObjectsWithTag("Rat" + ratID);
+        Debug.Log(rats.Length);
+        foreach (GameObject rat in rats) {
+            if (rat.name != ("Rat" + ratID + "(Clone)")) {
+                rat.GetComponent<RatExplode>().Explode();
+            }
         }
     }
 }

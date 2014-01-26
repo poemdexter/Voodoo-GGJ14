@@ -3,21 +3,29 @@ using System.Collections;
 
 public class RatChangeDirection : MonoBehaviour
 {
-    void OnTriggerEnter2D(Collider2D col)
+    Vector2 startPos;
+    
+    void Start()
     {
-        if (col.CompareTag("Environment")) {
-            Vector3 temp = transform.parent.localScale;
-            transform.parent.GetComponent<RatMovement>().FlipDirection();
-            transform.parent.localScale = new Vector3(-temp.x, temp.y, temp.z);
-        }
+        startPos = transform.localPosition;
+    }
+    
+    void Update()
+    {
+        //ensure collider box doesn't move
+        transform.localPosition = startPos;
     }
     
     void OnCollisionEnter2D(Collision2D col)
     {
         if (col.collider.CompareTag("Environment")) {
-            Vector3 temp = transform.parent.localScale;
-            transform.parent.GetComponent<RatMovement>().FlipDirection();
-            transform.parent.localScale = new Vector3(-temp.x, temp.y, temp.z);
+            if (transform.parent.CompareTag("Rat1") || transform.parent.CompareTag("Rat2")) {
+                Vector3 temp = transform.parent.localScale;
+                transform.parent.GetComponent<RatMovement>().FlipDirection();
+                transform.parent.localScale = new Vector3(-temp.x, temp.y, temp.z);
+            } else if (transform.parent.CompareTag("Rat3")) {
+                transform.parent.GetComponent<RatMovement>().canJump = true;
+            }
         }
     }
 }
