@@ -16,6 +16,8 @@ public class CameraFollowPlayer : MonoBehaviour
         // Setting up the reference.
         player = GameObject.FindGameObjectWithTag("Player").transform;
         
+        transform.position = new Vector3(player.position.x, player.position.y, transform.position.z); // !!! setting init camera pos to player's !!!
+        
         // Setting the relative position as the initial relative position of the camera in the scene.
         relCameraPos = transform.position - player.position;
         relCameraPosMag = relCameraPos.magnitude - 0.5f;
