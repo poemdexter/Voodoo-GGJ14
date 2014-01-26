@@ -18,14 +18,6 @@ public class RatExplode : MonoBehaviour
     {
         if (explode) {
             rigidbody2D.isKinematic = true;
-            foreach (Transform child in transform) {
-                child.parent = null;
-                child.collider2D.isTrigger = false;
-                child.rigidbody2D.isKinematic = false;
-                child.rigidbody2D.AddTorque(Random.Range(-torquePower, torquePower));
-                child.rigidbody2D.AddForce(new Vector2(Random.Range(-.5f, .5f), 1.0f) * forcePower);
-            }
-            Destroy(gameObject);
                 
             ParticleSystem part = GameObject.Instantiate(bloodEffect, transform.position, Quaternion.identity) as ParticleSystem;
             part.Play();
@@ -35,6 +27,13 @@ public class RatExplode : MonoBehaviour
             ThrowPart();
             ThrowPart();
             ThrowPart();
+            ThrowPart();
+            ThrowPart();
+            ThrowPart();
+            ThrowPart();
+            ThrowPart();
+            
+            Destroy(gameObject);
         }
     }
     
