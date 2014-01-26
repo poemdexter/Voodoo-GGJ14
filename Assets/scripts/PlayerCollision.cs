@@ -9,6 +9,11 @@ public class PlayerCollision : MonoBehaviour
         if (col.gameObject.CompareTag("Rat")) {
             Respawn();
         }
+
+        if (col.gameObject.CompareTag("RatTail")) {
+            // stop and play stab animation
+
+        }
     }
 
     void Respawn()

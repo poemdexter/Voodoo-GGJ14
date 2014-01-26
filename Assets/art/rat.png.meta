@@ -45,7 +45,7 @@ TextureImporter:
     compressionQuality: 50
   spriteSheet:
     sprites:
-    - name: rat_0
+    - name: rat_head
       rect:
         serializedVersion: 2
         x: 70
@@ -54,7 +54,7 @@ TextureImporter:
         height: 109
       alignment: 9
       pivot: {x: .645040154, y: .0599727817}
-    - name: rat_1
+    - name: rat_flap
       rect:
         serializedVersion: 2
         x: 277
@@ -63,7 +63,7 @@ TextureImporter:
         height: 28
       alignment: 1
       pivot: {x: 0, y: 1}
-    - name: rat_2
+    - name: rat_hand_back
       rect:
         serializedVersion: 2
         x: 49
@@ -72,7 +72,7 @@ TextureImporter:
         height: 40
       alignment: 9
       pivot: {x: .824074149, y: .710647941}
-    - name: rat_3
+    - name: rat_hand_front
       rect:
         serializedVersion: 2
         x: 134
@@ -81,7 +81,7 @@ TextureImporter:
         height: 40
       alignment: 9
       pivot: {x: .82407403, y: .743055344}
-    - name: rat_4
+    - name: rat_body
       rect:
         serializedVersion: 2
         x: 236
@@ -90,7 +90,7 @@ TextureImporter:
         height: 132
       alignment: 0
       pivot: {x: .5, y: .5}
-    - name: rat_5
+    - name: rat_leg_back
       rect:
         serializedVersion: 2
         x: 40
@@ -99,7 +99,7 @@ TextureImporter:
         height: 60
       alignment: 9
       pivot: {x: .730949402, y: .737654388}
-    - name: rat_6
+    - name: rat_leg_front
       rect:
         serializedVersion: 2
         x: 149
@@ -108,7 +108,7 @@ TextureImporter:
         height: 60
       alignment: 9
       pivot: {x: .730948985, y: .694444537}
-    - name: rat_7
+    - name: rat_tail
       rect:
         serializedVersion: 2
         x: 272
