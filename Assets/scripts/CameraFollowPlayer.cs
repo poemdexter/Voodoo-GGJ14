@@ -4,7 +4,7 @@ using System.Collections;
 public class CameraFollowPlayer : MonoBehaviour
 {
     public float smooth = 1.5f;         // The relative speed at which the camera will catch up.
-
+    public bool doSmoothing = false;
     private Transform player;           // Reference to the player's transform.
     private Vector3 relCameraPos;       // The relative position of the camera from the player.
     private float relCameraPosMag;      // The distance of the camera from the player.
@@ -26,7 +26,7 @@ public class CameraFollowPlayer : MonoBehaviour
         player = newPlayer;
     }
     
-    void FixedUpdate()
+    void Update()
     {
         // The standard position of the camera is the relative position of the camera from the player.
         Vector3 standardPos = player.position + relCameraPos;
