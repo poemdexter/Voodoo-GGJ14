@@ -5,6 +5,8 @@ public class GameController : MonoBehaviour
 {
     public GameObject playerPrefab;
     public Transform spawnpoint;
+    public AudioSource hurtSound;
+    public AudioSource deathSound;
 
     void Start()
     {
@@ -33,11 +35,20 @@ public class GameController : MonoBehaviour
     public void DestroyRats(int ratID)
     {
         GameObject[] rats = GameObject.FindGameObjectsWithTag("Rat" + ratID);
-        Debug.Log(rats.Length);
         foreach (GameObject rat in rats) {
             if (rat.name != ("Rat" + ratID + "(Clone)")) {
                 rat.GetComponent<RatExplode>().Explode();
             }
         }
+    }
+    
+    public void PlayHurtSound()
+    {
+        hurtSound.Play();
+    }
+    
+    public void PlayDeathSound()
+    {
+        deathSound.Play();
     }
 }

@@ -47,6 +47,8 @@ public class JumpPhysics2D : MonoBehaviour
     public bool IsDoubleJumping { get; private set; }
     public bool HasDoubleJumped { get; private set; }
     public bool HasJumpedOnce { get; private set; }
+    
+    public AudioSource jumpSound;
 
     void Awake()
     {
@@ -138,6 +140,9 @@ public class JumpPhysics2D : MonoBehaviour
             InAir = true;
             IsGrounded = false;
             currentGravity = gravity;
+            
+            // play audio for jump
+            jumpSound.Play();
 
             // needed for double jump check
             HasJumpedOnce = true;

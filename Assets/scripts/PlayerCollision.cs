@@ -30,6 +30,7 @@ public class PlayerCollision : MonoBehaviour
         
         if (destroyRatsTrigger) {
             destroyRatsTrigger = false;
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().PlayHurtSound();
             if (killrats3)
                 GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().DestroyRats(3);
             else if (killrats2)
@@ -42,15 +43,8 @@ public class PlayerCollision : MonoBehaviour
     void OnCollisionEnter2D(Collision2D col)
     {
         // on hit rat, die die die
-        if (col.gameObject.CompareTag("Rat1")) {
-            Respawn();
-        }
-        
-        if (col.gameObject.CompareTag("Rat2")) {
-            Respawn();
-        }
-        
-        if (col.gameObject.CompareTag("Rat3")) {
+        if (col.gameObject.CompareTag("Rat1") || col.gameObject.CompareTag("Rat2") || col.gameObject.CompareTag("Rat3")) {
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().PlayDeathSound();
             Respawn();
         }
     }
